@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class Ball : MonoBehaviour
 
     [SerializeField] float velocity;
     [SerializeField] float multiVelocity;
+    [SerializeField] GameObject _shooter;
 
     bool fixedXAxis = true;
     readonly float _boundary = 2.64f;
@@ -25,15 +27,6 @@ public class Ball : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            rb.velocity *= multiVelocity;
-        }
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            rb.velocity /= multiVelocity;
-        }
-
         if ((transform.position.x < -_boundary || transform.position.x > _boundary) && fixedXAxis)
         {
             fixedXAxis = false;
@@ -57,24 +50,25 @@ public class Ball : MonoBehaviour
 
         if (transform.position.x > 2)
         {
-            min = -1f;
+            min = -2f;
             max = 0;
         }
         else if (transform.position.x < -2)
         {
             min = 0f;
-            max = 1f;
+            max = 2f;
         }
         else
         {
-            min = -1f;
-            max = 1f;
+            min = -2f;
+            max = 2f;
         }
 
         GetRandomVector2(min, max);
     }
     void GetRandomVector2(float min = -1f, float max = 1f)
     {
-        rb.velocity = Time.deltaTime * velocity * new Vector2(Random.Range(min, max), 1);
+        rb.velocity = Vector2.zero;
+        rb.AddForce(new Vector2(Random.Range(min, max), 1 * velocity), ForceMode2D.Impulse);
     }
 }
