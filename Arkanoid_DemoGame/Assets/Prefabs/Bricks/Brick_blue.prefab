@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9210990135816084649}
   - component: {fileID: 1876313001793301564}
   - component: {fileID: -6326420618192815147}
+  - component: {fileID: 4335051788968249426}
   m_Layer: 0
   m_Name: Brick_blue
   m_TagString: Brick
@@ -93,7 +94,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3168174748405565792}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -125,4 +126,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _brickSO: {fileID: 11400000, guid: 820d857c8c5adca4d81063feb50b524a, type: 2}
-  _health: 0
+--- !u!70 &4335051788968249426
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168174748405565792}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.06}
+  m_Size: {x: 2.6099997, y: 1.19}
+  m_Direction: 1

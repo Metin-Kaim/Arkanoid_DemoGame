@@ -53,3 +53,6 @@ TagManager:
   - name: Ball
     uniqueID: 69517529
     locked: 0
+  - name: StartBrick
+    uniqueID: 363054815
+    locked: 0

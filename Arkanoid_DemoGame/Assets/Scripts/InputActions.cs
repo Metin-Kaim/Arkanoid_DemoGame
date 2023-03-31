@@ -35,6 +35,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Launcher"",
+                    ""type"": ""Button"",
+                    ""id"": ""04fa2a12-746a-4815-8b7b-2e33cb6b74d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -103,6 +112,28 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""49abf57a-dc81-490b-b258-14f24094ad6e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keybord"",
+                    ""action"": ""Launcher"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5261023e-6556-4d61-90aa-f2d1475939de"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Launcher"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -135,6 +166,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         // Shooter
         m_Shooter = asset.FindActionMap("Shooter", throwIfNotFound: true);
         m_Shooter_Movement = m_Shooter.FindAction("Movement", throwIfNotFound: true);
+        m_Shooter_Launcher = m_Shooter.FindAction("Launcher", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -195,11 +227,13 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Shooter;
     private IShooterActions m_ShooterActionsCallbackInterface;
     private readonly InputAction m_Shooter_Movement;
+    private readonly InputAction m_Shooter_Launcher;
     public struct ShooterActions
     {
         private @InputActions m_Wrapper;
         public ShooterActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Shooter_Movement;
+        public InputAction @Launcher => m_Wrapper.m_Shooter_Launcher;
         public InputActionMap Get() { return m_Wrapper.m_Shooter; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -212,6 +246,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_ShooterActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_ShooterActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_ShooterActionsCallbackInterface.OnMovement;
+                @Launcher.started -= m_Wrapper.m_ShooterActionsCallbackInterface.OnLauncher;
+                @Launcher.performed -= m_Wrapper.m_ShooterActionsCallbackInterface.OnLauncher;
+                @Launcher.canceled -= m_Wrapper.m_ShooterActionsCallbackInterface.OnLauncher;
             }
             m_Wrapper.m_ShooterActionsCallbackInterface = instance;
             if (instance != null)
@@ -219,6 +256,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Launcher.started += instance.OnLauncher;
+                @Launcher.performed += instance.OnLauncher;
+                @Launcher.canceled += instance.OnLauncher;
             }
         }
     }
@@ -244,5 +284,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     public interface IShooterActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnLauncher(InputAction.CallbackContext context);
     }
 }

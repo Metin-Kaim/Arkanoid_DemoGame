@@ -6,11 +6,14 @@ public class Brick : MonoBehaviour
 {
     [SerializeField] BrickSO _brickSO;
 
+    public static int TotalBrick;
+
     float _health;
 
     private void Start()
     {
         _health = _brickSO.health;
+        TotalBrick++;
     }
 
     private void Update()
@@ -19,13 +22,9 @@ public class Brick : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void DecreaseHealth()
-    {
-        _health--;
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        TotalBrick--;
         _health--;
     }
 }

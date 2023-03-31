@@ -4,22 +4,31 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] float _moveSpeed;
 
-    InputActions _inputActions;
     Ball _ball;
+    InputActions _inputActions;
+    Animator _animator;
+
+    public bool CanMove { get; set; }
 
     private void Awake()
     {
         _ball = GameObject.FindGameObjectWithTag("Ball").GetComponent<Ball>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
-        _inputActions = new();
+        _inputActions = GameManager.Instance.InputActions;
         _inputActions.Shooter.Enable();
+
+        CanMove = true;
     }
     private void Update()
     {
+        if (!CanMove) return;
+
         float moveDir = _inputActions.Shooter.Movement.ReadValue<float>();
+
         transform.Translate(moveDir * _moveSpeed * Time.deltaTime * Vector3.right);
 
         float posX = Mathf.Clamp(transform.position.x, -2, +2);
@@ -28,11 +37,13 @@ public class Shooter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        _animator.SetTrigger("Shoot");
+
         if (collision.gameObject.CompareTag("Ball") && _ball.NeedToFixXAxis)
         {
             _ball.NeedToFixXAxis = false;
             _ball.RandomLaunch();
         }
     }
-    
+
 }
