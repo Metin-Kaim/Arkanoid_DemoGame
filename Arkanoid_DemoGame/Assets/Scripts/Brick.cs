@@ -19,12 +19,15 @@ public class Brick : MonoBehaviour
     private void Update()
     {
         if (_health == 0)
+        {
+            TotalBrick--;
             Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        TotalBrick--;
+        SoundManager.Instance.PlaySound(3);
         _health--;
     }
 }

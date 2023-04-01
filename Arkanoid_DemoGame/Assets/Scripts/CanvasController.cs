@@ -38,6 +38,7 @@ public class CanvasController : MonoBehaviour
 
     public void LevelLoader(int index) //win-lose butonlarýna verildi.
     {
+        Brick.TotalBrick = 0;
         GameManager.Instance.LoadLevelScene(index);
     }
 }

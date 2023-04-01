@@ -64,7 +64,7 @@ public class Ball : MonoBehaviour
 
     IEnumerator FixingXAxis()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         if (transform.position.x < -_boundary || transform.position.x > _boundary)
         {
             needToFixXAxis = true;

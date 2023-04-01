@@ -37,6 +37,8 @@ public class Shooter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        SoundManager.Instance.PlaySound(4);
+
         _animator.SetTrigger("Shoot");
 
         if (collision.gameObject.CompareTag("Ball") && _ball.NeedToFixXAxis)

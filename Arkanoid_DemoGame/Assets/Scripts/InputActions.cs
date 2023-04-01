@@ -81,56 +81,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""ebf59f5b-5222-4fe0-8ad6-4d74d63a87f3"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""96047b2a-13b6-4667-92a1-485c2a83f699"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touch"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""93292b79-c61d-4b6e-84f7-2a980e5fe8e0"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touch"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""49abf57a-dc81-490b-b258-14f24094ad6e"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keybord"",
-                    ""action"": ""Launcher"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5261023e-6556-4d61-90aa-f2d1475939de"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": ""Press(behavior=1)"",
-                    ""processors"": """",
-                    ""groups"": ""Touch"",
                     ""action"": ""Launcher"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
