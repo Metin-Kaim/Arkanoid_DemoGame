@@ -15,21 +15,26 @@ public class StartBrick : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlaySound(0); //menu
+        SoundManager.Instance.MenuSound1Player(1); //menu
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SoundManager.Instance.PlaySound(3);
+        SoundManager.Instance.BrickSoundPlayer(1);
         _ball.gameObject.SetActive(false);
         _shooter.gameObject.SetActive(false);
 
+        SoundManager.Instance.MenuSound1Player(0);
         _animator.SetTrigger("Begin");
     }
 
     public void LoadLevel()
     {
-        SoundManager.Instance.StopSound(0);
         GameManager.Instance.LoadLevelScene(1); //TODO: son kaydedilen leveli al.
+    }
+
+    public void MenuSound2Player(int soundState) // start brick animasyonunun içine eklendi. (play and stop)
+    {
+        SoundManager.Instance.MenuSound2Player(soundState);
     }
 }

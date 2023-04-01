@@ -37,7 +37,7 @@ public class Shooter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SoundManager.Instance.PlaySound(4);
+        SoundManager.Instance.ShooterSoundPlayer(1);
 
         _animator.SetTrigger("Shoot");
 

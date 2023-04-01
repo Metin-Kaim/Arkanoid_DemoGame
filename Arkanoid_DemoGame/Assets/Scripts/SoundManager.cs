@@ -6,7 +6,19 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
 
-    [SerializeField] AudioSource[] _audioSources;
+    [SerializeField] AudioSource _menuSound1;
+    [SerializeField] AudioSource _menuSound2;
+    [SerializeField] AudioSource _winSound;
+    [SerializeField] AudioSource _loseSound;
+    [SerializeField] AudioSource _brickSound;
+    [SerializeField] AudioSource _shooterSound;
+
+    public AudioSource MenuSound1 => _menuSound1;
+    public AudioSource MenuSound2 => _menuSound2;
+    public AudioSource WinSound => _winSound;
+    public AudioSource LoseSound => _loseSound;
+    public AudioSource BrickSound => _brickSound;
+    public AudioSource ShooterSound => _shooterSound;
 
     private void Awake()
     {
@@ -22,32 +34,46 @@ public class SoundManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.Instance.OnGameOver += LoseSound;
-        GameManager.Instance.OnWin += WinSound;
+        GameManager.Instance.OnGameOver += LoseSoundPlayer;
+        GameManager.Instance.OnWin += WinSoundPlayer;
     }
     private void OnDisable()
     {
-        GameManager.Instance.OnGameOver -= LoseSound;
-        GameManager.Instance.OnWin -= WinSound;
+        GameManager.Instance.OnGameOver -= LoseSoundPlayer;
+        GameManager.Instance.OnWin -= WinSoundPlayer;
     }
 
-    public void PlaySound(int index) // 0 = menu, 1 = win, 2 = lose, 3 = brick, 4 = shooter
+    private void WinSoundPlayer()
     {
-        _audioSources[index].Play();
+        _winSound.Play();
+    }
+    private void LoseSoundPlayer()
+    {
+        _loseSound.Play();
     }
 
-    public void StopSound(int index)
+    public void MenuSound1Player(int soundState)
     {
-        if (_audioSources[index].isPlaying)
-            _audioSources[index].Stop();
+        SoundController(soundState, MenuSound1);
     }
+    public void MenuSound2Player(int soundState)
+    {
+        SoundController(soundState, MenuSound2);
+    }
+    public void BrickSoundPlayer(int soundState)
+    {
+        SoundController(soundState, BrickSound);
+    }
+    public void ShooterSoundPlayer(int soundState)
+    {
+        SoundController(soundState, ShooterSound);
+}
 
-    public void WinSound()
+    private void SoundController(int soundState, AudioSource audioSource)
     {
-        _audioSources[1].Play();
-    }
-    public void LoseSound()
-    {
-        _audioSources[2].Play();
+        if (soundState == 0)
+            audioSource.Stop();
+        else
+            audioSource.Play();
     }
 }

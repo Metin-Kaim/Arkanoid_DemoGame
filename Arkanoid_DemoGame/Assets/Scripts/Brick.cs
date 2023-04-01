@@ -27,7 +27,7 @@ public class Brick : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SoundManager.Instance.PlaySound(3);
+        SoundManager.Instance.BrickSoundPlayer(1);
         _health--;
     }
 }
