@@ -445,11 +445,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5b586b55a6c85f74493a41b55976740d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ca6e05bf9bf34354c9bef055c09dc53d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -541,9 +541,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5b586b55a6c85f74493a41b55976740d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8d8b725652725ee4e8a01c065b100f8d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -639,9 +639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2076f11757d1b941b4b1cac95b9d611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuSound1: {fileID: 0}
-  _menuSound2: {fileID: 0}
-  _winSound: {fileID: 0}
-  _gameOverSound: {fileID: 0}
-  _brickSound: {fileID: 0}
-  _shooterSound: {fileID: 0}
+  _menuSound1: {fileID: 311763693}
+  _menuSound2: {fileID: 8044888005455951510}
+  _winSound: {fileID: 311763692}
+  _loseSound: {fileID: 311763691}
+  _brickSound: {fileID: 311763690}
+  _shooterSound: {fileID: 311763689}

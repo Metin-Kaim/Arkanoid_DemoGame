@@ -72,6 +72,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+
+    #region LoadLevelScene w/int
     public void LoadLevelScene(int levelIndex = 0)
     {
         StartCoroutine(LoadLevelSceneAsync(levelIndex));
@@ -81,4 +83,17 @@ public class GameManager : MonoBehaviour
         yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + levelIndex);
         Time.timeScale = 1;
     }
+    #endregion
+
+    #region LoadLevelScene w/string
+    public void LoadLevelScene(string levelIndex)
+    {
+        StartCoroutine(LoadLevelSceneAsync(levelIndex));
+    }
+    IEnumerator LoadLevelSceneAsync(string levelIndex)
+    {
+        yield return SceneManager.LoadSceneAsync(levelIndex);
+        Time.timeScale = 1;
+    }
+    #endregion
 }

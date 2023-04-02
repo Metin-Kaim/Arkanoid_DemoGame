@@ -1,7 +1,6 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
+using UnityEngine.InputSystem;
 
 public class Ball : MonoBehaviour
 {
@@ -20,6 +19,7 @@ public class Ball : MonoBehaviour
     public bool NeedToFixXAxis { get => needToFixXAxis; set => needToFixXAxis = value; }
     public bool CanMove { get; set; }
 
+    float isButtonPressed = 0;
 
     private void Awake()
     {
@@ -31,12 +31,13 @@ public class Ball : MonoBehaviour
         transform.parent = _shooter.transform;
         VelocityOfBallisZero();
         CanMove = true;
+        _inputActions.Shooter.Launcher.canceled += OnPressCanceled;
+        _inputActions.Shooter.Enable();
+
     }
     private void Update()
     {
         if (!CanMove) return;
-
-        float isButtonPressed = _inputActions.Shooter.Launcher.ReadValue<float>();
 
         if (isButtonPressed == 1 && !isGameStart) //top firlatildi ve oyun basladi
         {
@@ -53,6 +54,12 @@ public class Ball : MonoBehaviour
 
 
     }
+
+    public void OnPressCanceled(InputAction.CallbackContext context)
+    {
+        isButtonPressed = 1;
+    }
+
     private void OnEnable()
     {
         GameManager.Instance.OnGameOver += VelocityOfBallisZero;

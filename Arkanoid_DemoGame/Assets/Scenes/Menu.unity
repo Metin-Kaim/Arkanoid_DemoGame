@@ -308,42 +308,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 311763688, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: _winSound
-      value: 
-      objectReference: {fileID: 1868833490}
-    - target: {fileID: 311763688, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: _loseSound
-      value: 
-      objectReference: {fileID: 1868833491}
-    - target: {fileID: 311763688, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: _brickSound
-      value: 
-      objectReference: {fileID: 1868833492}
-    - target: {fileID: 311763688, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: _menuSound1
-      value: 
-      objectReference: {fileID: 1868833489}
-    - target: {fileID: 311763688, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: _menuSound2
-      value: 
-      objectReference: {fileID: 1868833496}
-    - target: {fileID: 311763688, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: _shooterSound
-      value: 
-      objectReference: {fileID: 1868833493}
-    - target: {fileID: 311763688, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: _gameOverSound
-      value: 
-      objectReference: {fileID: 1868833491}
-    - target: {fileID: 311763693, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 311763693, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ca6e05bf9bf34354c9bef055c09dc53d, type: 3}
     - target: {fileID: 4252093785687911474, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -391,18 +355,6 @@ PrefabInstance:
     - target: {fileID: 4252093785687911476, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044888005455951510, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: m_Volume
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044888005455951510, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8d8b725652725ee4e8a01c065b100f8d, type: 3}
-    - target: {fileID: 8044888005455951510, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-      propertyPath: BypassEffects
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
@@ -609,36 +561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62aad1832eb63f5429be286a86b29a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &1868833489 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 311763693, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-  m_PrefabInstance: {fileID: 311763686}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1868833490 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 311763692, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-  m_PrefabInstance: {fileID: 311763686}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1868833491 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 311763691, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-  m_PrefabInstance: {fileID: 311763686}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1868833492 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 311763690, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-  m_PrefabInstance: {fileID: 311763686}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1868833493 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 311763689, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-  m_PrefabInstance: {fileID: 311763686}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1868833496 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8044888005455951510, guid: 3c6897393e17d404eb98e412fb735bfc, type: 3}
-  m_PrefabInstance: {fileID: 311763686}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1909826331
 PrefabInstance:
   m_ObjectHideFlags: 0

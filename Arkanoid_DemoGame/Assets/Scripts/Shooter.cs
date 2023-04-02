@@ -28,7 +28,6 @@ public class Shooter : MonoBehaviour
         if (!CanMove) return;
 
         float moveDir = _inputActions.Shooter.Movement.ReadValue<float>();
-
         transform.Translate(moveDir * _moveSpeed * Time.deltaTime * Vector3.right);
 
         float posX = Mathf.Clamp(transform.position.x, -2, +2);

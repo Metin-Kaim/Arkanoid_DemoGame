@@ -136,6 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62aad1832eb63f5429be286a86b29a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 7
+  velocity: 6
   multiVelocity: 1.5
   _shooter: {fileID: 0}

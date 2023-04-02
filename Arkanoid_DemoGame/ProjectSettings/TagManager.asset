@@ -56,3 +56,6 @@ TagManager:
   - name: StartBrick
     uniqueID: 363054815
     locked: 0
+  - name: Reset
+    uniqueID: 3709045287
+    locked: 0

@@ -29,9 +29,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""290fe6eb-6d51-413b-83dc-8b7b86260354"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -82,11 +82,33 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d878da9c-9bb9-4159-bba3-626d541d54e5"",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta/x"",
+                    ""interactions"": """",
+                    ""processors"": ""Clamp(min=-15,max=15)"",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""49abf57a-dc81-490b-b258-14f24094ad6e"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keybord"",
+                    ""action"": ""Launcher"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""336a3bb0-15ed-4f23-be26-1a92a79010f1"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
                     ""action"": ""Launcher"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

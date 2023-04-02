@@ -23,4 +23,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoSonu.unity
     guid: b107d7fe4c76e8e4b80c4eb0324c4d15
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 8c902d2ffbb5e82448583b207c250979, type: 2}
